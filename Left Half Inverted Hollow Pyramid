@@ -1,0 +1,41 @@
+public class Pattern {
+    
+    static void printPattern(int currentRow, int rows){
+        if (currentRow < 0){
+            return;
+        }
+        if (currentRow==1 || currentRow == rows){
+            printSolidLine(currentRow);
+        }
+        else{
+            printHollowLine(1, currentRow);
+        }
+        System.out.println();
+        printPattern(currentRow -1, rows);
+    }
+    
+    static void printSolidLine( int stars){
+        if(stars == 0){
+            return;
+        }
+        System.out.print("* ");
+        printSolidLine(stars-1);
+    }
+    
+    static void printHollowLine(int column, int currentRow){
+        if(column>currentRow){
+            return;
+        }
+        if(column == 1 || column == currentRow){
+            System.out.print("* ");
+        }
+        else{
+            System.out.print(" ");
+        }
+        printHollowLine (column+1, currentRow);
+    }
+  public static void main(String args[]) {
+    printPattern(4, 4);
+   
+  }
+}
