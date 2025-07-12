@@ -1,0 +1,34 @@
+// ------------------------------- method 1 -------------------------------
+
+public class SumOfDigit {
+    static void sum (int num, int sum){
+        if(num==0){
+            System.out.println(sum);
+            return;
+        }
+       int digit = num%10;
+       sum = sum+digit;
+       sum (num/10, sum);
+    }
+  public static void main(String args[]) {
+    sum ( 26738, 0);
+  }
+}
+
+
+// ------------------------------ method 2 ------------------------------
+
+public class SumOfDigit {
+    static int sumdigit (int num){
+        if(num==0){
+            return 0;
+        }
+    int sum = sumdigit (num/10);
+    int digit = num%10;
+    sum = sum+digit;
+    return sum;
+    }
+  public static void main(String args[]) {
+    System.out.println (sumdigit (26738));
+  }
+}
