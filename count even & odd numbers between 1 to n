@@ -1,0 +1,49 @@
+// ======================================= Method 1 ==============================================================
+public class CountEvenOdd{
+    
+    static void count( int range, int even, int odd){
+        
+        if( range ==0){
+            System.out.println( "Even count " + even + " Odd count " + odd);
+            return ;
+        }
+        if (range%2==0){
+            even++;
+        }
+        else{
+            odd++;
+        }
+        
+        count( range-1, even, odd);
+    }
+    public static void main(String args[]){
+        count( 10, 0, 0);
+}
+}
+
+//==================================== Method 2 =================================================================
+public class CountEvenOdd{
+    
+    static int []  count( int range){
+        
+        if( range ==0){
+            int result [] = new int [2];
+            return result ;
+        }
+        
+        int result [] = count(range-1);
+        if (range%2==0){
+           result [0] = result [0] +1;
+        }
+        else{
+            result [1] = result [1] +1;
+        }
+        
+       return result;
+    }
+    public static void main(String args[]){
+     int[] arr = count(10);
+     System.out.println( " Even " +arr[0]);
+     System.out.println( " odd " +arr[1]);
+}
+}
