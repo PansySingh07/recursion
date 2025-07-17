@@ -1,0 +1,32 @@
+public class ArmstrongNum {
+    
+     static int countDigit(int num){
+            if (num==0){
+                return 0;
+            }
+            return 1 + countDigit(num/10);
+        }
+        
+    static void armstrong (int num, int sum, int count, int cpy){
+        if(num==0){
+            if(sum==cpy){
+                System.out.println( "Armstrong Number");
+            }
+            else{
+                System.out.println( "Not Armstrong Number");
+            }
+            return;
+        }
+        
+        int digit = num%10;
+        int result = (int)Math.pow (digit, count);
+        sum = sum+result;
+        
+        armstrong (num/10, sum, count, cpy);
+    }
+    
+    public static void main(String args[]) {
+   int num = 153; int count = countDigit(num);
+   armstrong ( num, 0, count, num);
+  }
+}
