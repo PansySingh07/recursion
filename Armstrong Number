@@ -4,7 +4,8 @@ public class ArmstrongNum {
             if (num==0){
                 return 0;
             }
-            return 1 + countDigit(num/10);
+            int count = countDigit(num/10);
+            return count+1;
         }
         
     static void armstrong (int num, int sum, int count, int cpy){
