@@ -1,0 +1,32 @@
+// ================================================ METHOD 1 ==================================================
+public class PrintTable {
+    static void print (int num, int val){
+        if (val ==0){
+            return;
+        }
+        
+        print ( num, val-1);
+        System.out.println( num + " * " + val + " = " + (num*val));
+    }
+  public static void main(String args[]) {
+  print (5, 10);
+  }
+}
+
+
+// ================================================ METHOD 2 ==================================================
+public class PrintTable {
+    static String print (int num, int val){
+        if (val ==0){
+            return " ";
+        }
+        
+        String result = print (num, val-1);
+        String expression =  num + " * " + val + " = " + (num*val) + "\n";
+        return result+expression;
+    }
+  public static void main(String args[]) {
+  String r = print (5, 10);
+  System.out.println(r);
+  }
+}
