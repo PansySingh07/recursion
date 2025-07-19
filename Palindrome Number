@@ -1,0 +1,38 @@
+//==================================================== Method 1 ==============================================
+public class PalindromeNum {
+    static void palindrome (int num, int reverse, int cpy){
+        if (num ==0){
+            System.out.println( reverse == cpy? "Palindrome" : "Not Palindrome");
+            return;
+        }
+         int digit = num%10;
+         reverse = reverse*10 +digit;
+         palindrome( num/10, reverse, cpy);
+    }
+  public static void main(String args[]) {
+      int num = 151; 
+      int cpy = num;
+      palindrome ( num, 0, cpy);
+  }
+}
+
+
+
+// ======================================================== Method 2 ==================================================
+public class PalindromeNum {
+    static boolean palindrome (int num, int reverse, int cpy){
+        if (num ==0){
+            return reverse == cpy;
+        
+        }
+         int digit = num%10;
+         reverse = reverse*10 +digit;
+        return palindrome( num/10, reverse, cpy);
+    }
+  public static void main(String args[]) {
+      int num = 123; 
+      int cpy = num;
+      boolean r = palindrome ( num, 0, cpy);
+      System.out.println( r? "Palindrome" : "Not Palindrome");
+  }
+}
