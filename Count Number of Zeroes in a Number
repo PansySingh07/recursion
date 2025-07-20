@@ -1,0 +1,14 @@
+public class CountZero {
+    static int countZero (int num){
+        if (num==0){
+            return 0;
+        }
+        int count = countZero(num/10);
+        int digit = num%10;
+        return count + (digit ==0? 1 :0);
+    }
+  public static void main(String args[]) {
+   int r = countZero (120003400);
+   System.out.println (r);
+  }
+}
