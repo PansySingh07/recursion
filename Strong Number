@@ -1,0 +1,22 @@
+public class StrongNumber {
+    static int factorial(int n){
+        if(n<=1){
+            return 1;
+        }
+            return n*factorial(n-1);
+    }
+    static int strongNum ( int num){
+        if (num==0){
+            return 0;
+        }
+        int sum = strongNum (num/10);
+       int digit = num%10;
+       return sum+factorial(digit);
+       
+    }
+  public static void main(String args[]) {
+        int num = ;
+        int sum = strongNum( num );
+        System.out.println( sum == num? "Strong Number" : "Not a Strong Number");
+  }
+}
