@@ -1,0 +1,12 @@
+public class SumOfNaturalNum {
+    static int NaturalNum ( int num){
+        if (num==0){
+            return 0;
+        }
+        int sum = NaturalNum (num-1);
+        return sum+num;
+    }
+  public static void main(String args[]) {
+        System.out.println( NaturalNum (10));
+  }
+}
