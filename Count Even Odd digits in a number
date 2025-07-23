@@ -1,0 +1,24 @@
+public class EvenOddCount {
+    static int [] evenOdd (int num){
+        int [] count = new int [2];
+        return countDigits (num, count);
+    }
+    
+    static int [] countDigits (int num, int [] count){
+        if (num ==0){
+            return count;
+        }
+        int digit = num%10;
+        if(digit%2==0){
+            count[0]++;
+        }
+        else{
+            count[1]++;
+        }
+        return countDigits (num/10, count);
+    }
+  public static void main(String args[]) {
+  int [] result = evenOdd (12345);
+  System.out.println("Even Count " +result[0]+ " Odd Count " +result[1]);
+  }
+}
