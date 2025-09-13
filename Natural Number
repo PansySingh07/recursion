@@ -1,0 +1,14 @@
+public class NaturalNumberSum{
+    static void sum(int n){
+        if (n<=0){
+        return;
+    }
+    System.out.println("Sum of first  "   + n +   " natural number = " + n*(n+1)/2);
+    
+}
+
+    public static void main(String[] args) {
+        int n =10;
+        sum(n);
+    }
+}
