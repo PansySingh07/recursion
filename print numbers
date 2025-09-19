@@ -1,0 +1,14 @@
+public class Recursion1{
+    static void show(int num){
+        //base case or termination case(stop the recursion)
+        if(num==0){
+            return;
+        }
+        show(num/10);
+        System.out.println(num%10);
+    }
+
+    public static void main(String args[]){
+        show(27549);
+    }
+}
