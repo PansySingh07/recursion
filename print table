@@ -1,0 +1,13 @@
+public class Table {
+    static void printTable(int num, int mult){
+        if(mult>10){
+            return;
+        }
+        System.out.println(num*mult);
+        printTable(num, mult+1);
+    }
+    public static void main(String[] args) {
+        printTable(5, 1);
+    }
+    
+}
