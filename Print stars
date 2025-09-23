@@ -1,0 +1,20 @@
+public class MyClass {
+    static void printStar (int str){
+        if (str==0){
+            return;
+        }
+        System.out.print("* ");
+        printStar(str-1);
+    }
+    static void printLine(int lines){
+        if(lines == 0){
+            return;
+        }
+        printLine(lines-1);
+        printStar(lines);
+        System.out.println();
+    }
+  public static void main(String args[]) {
+    printLine(5);
+  }
+}
