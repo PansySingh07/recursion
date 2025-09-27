@@ -1,0 +1,15 @@
+public class TowerOfHanoi {
+    static void tower (int disks, char A, char B, char C){
+        if(disks == 0){
+            return;
+        }
+            
+            tower (disks-1, A, B, C);
+            System.out.println(" move " + disks + " from " + A + " to " + C);
+            tower (disks-1, B, A, C);
+    }
+  public static void main(String args[]) {
+  int disks = 3;
+  tower( disks, 'A', 'B', 'C');
+  }
+}
